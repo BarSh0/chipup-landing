@@ -1,0 +1,166 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --basewhite: rgba(255, 255, 255, 1);
+  --bg: rgba(0, 5, 16, 1);
+  --cool-gray50: rgba(249, 250, 251, 1);
+  --gray-400: rgba(161, 161, 170, 1);
+  --gray-500: rgba(113, 113, 122, 1);
+  --gray-700: rgba(63, 63, 70, 1);
+  --gray-800: rgba(39, 39, 42, 1);
+  --gray-900: rgba(24, 24, 27, 1);
+  --main-colour: rgba(153, 227, 158, 1);
+  --regular-18px-font-family: 'Inter', Helvetica;
+  --regular-18px-font-size: 18px;
+  --regular-18px-font-style: normal;
+  --regular-18px-font-weight: 400;
+  --regular-18px-letter-spacing: 0px;
+  --regular-18px-line-height: 28px;
+  --semi-bold-13px-font-family: 'IBM Plex Sans', Helvetica;
+  --semi-bold-13px-font-size: 13px;
+  --semi-bold-13px-font-style: normal;
+  --semi-bold-13px-font-weight: 400;
+  --semi-bold-13px-letter-spacing: 0px;
+  --semi-bold-13px-line-height: 21px;
+  --semi-bold-16px-font-family: 'Inter', Helvetica;
+  --semi-bold-16px-font-size: 16px;
+  --semi-bold-16px-font-style: normal;
+  --semi-bold-16px-font-weight: 500;
+  --semi-bold-16px-letter-spacing: 0px;
+  --semi-bold-16px-line-height: 24px;
+  --semi-bold-18px-font-family: 'IBM Plex Sans', Helvetica;
+  --semi-bold-18px-font-size: 18px;
+  --semi-bold-18px-font-style: normal;
+  --semi-bold-18px-font-weight: 400;
+  --semi-bold-18px-letter-spacing: 0px;
+  --semi-bold-18px-line-height: 30px;
+  --semi-bold-60px-font-family: 'IBM Plex Sans', Helvetica;
+  --semi-bold-60px-font-size: 60px;
+  --semi-bold-60px-font-style: normal;
+  --semi-bold-60px-font-weight: 400;
+  --semi-bold-60px-letter-spacing: 0px;
+  --semi-bold-60px-line-height: 66px;
+  --set-01-color-1: rgba(0, 0, 0, 1);
+  --white: rgba(255, 255, 255, 1);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+/* Custom Accordion Animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.3s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.3s ease-out;
+}
